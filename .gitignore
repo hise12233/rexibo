@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Preview/calibración (archivos temporales)
+img/preview.png
+img/calibracion.png
+
+# Entornos virtuales
+venv/
+env/
+
+# Variables de entorno
+.env
