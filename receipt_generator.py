@@ -38,9 +38,13 @@ def formatear_monto(monto: str) -> tuple:
 
 def cargar_fuente(nombre: str, size: int) -> ImageFont.FreeTypeFont:
     rutas = [
-        f"C:/Windows/Fonts/{nombre}",
-        f"/usr/share/fonts/truetype/dejavu/{nombre}",
-        nombre,
+        # Fuente empaquetada en el proyecto (funciona en Render/Linux)
+        os.path.join(os.path.dirname(__file__), "fonts", "Roboto-Regular.ttf"),
+        # Fallback Windows
+        f"C:/Windows/Fonts/arial.ttf",
+        f"C:/Windows/Fonts/arialbd.ttf",
+        # Fallback Linux
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
     ]
     for ruta in rutas:
         if os.path.exists(ruta):
